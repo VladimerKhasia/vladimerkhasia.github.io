@@ -3312,7 +3312,7 @@ input, select, textarea {
 		z-index: 1;
 		min-height: 100hv;
 		margin-bottom:15%;
-		margin-top:15%;
+		margin-top:10%;
 	}
 
 		#intro input, #intro select, #intro textarea {
