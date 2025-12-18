@@ -38,7 +38,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     id: "andi",
-    title: "ANDI: Agent-based Network Dynamics and Interactions",
+    title: "ANDI: Adaptive Norm-Distribution Interface",
     authors: [
       { name: "Vladimer Khasia", isMe: true },
  
