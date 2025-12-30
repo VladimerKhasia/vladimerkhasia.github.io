@@ -30,7 +30,7 @@ export const PUBLICATIONS: Publication[] = [
     thumbnailUrl: "",
     abstract: "Mixture of Experts (MoE) models scale capacity but often suffer from representation collapse and gradient instability. We propose Dynamic Subspace Composition (DSC), a framework that approximates context-dependent weights via a state-dependent, sparse expansion of a shared basis bank. Formally, DSC models the weight update as a residual trajectory within a Star- Shaped Domain, employing a Magnitude-Gated Simplex Interpolation to ensure continuity at the identity. Unlike standard Mixture-of-LoRAs, which incurs O(M rd) parameter complexity by retrieving independent rank-r matrices, DSC constructs a compositional rank-K approximation from decoupled unit-norm basis vectors. This reduces parameter complexity to O(M d) and memory traffic to O(Kd), while Frame-Theoretic regularization and spectral constraints provide rigorous worst-case bounds on the dynamic update.",
     links: {
-      // code: "",
+      code: "https://github.com/VladimerKhasia/DSC",
       paper: "https://arxiv.org/abs/2512.23448",
       pdf: "https://arxiv.org/pdf/2512.23448"
     },
