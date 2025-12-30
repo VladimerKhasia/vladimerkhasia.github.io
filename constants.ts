@@ -19,40 +19,23 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
-    id: "primal",
-    title: "Primal: A Unified Deterministic Framework for Quasi-Orthogonal Hashing and Manifold Learning",
+    id: "DSC",
+    title: "Dynamic Subspace Composition: Efficient Adaptation via Contractive Basis Expansion", 
     authors: [
-      { name: "Vladimer Khasia", isMe: true }, // Kept as first per request context, though usually Sartoretti is first
-
+      { name: "Vladimer Khasia", isMe: true },
+  
     ],
     venue: "arXiv",
     year: 2025,
-    thumbnailUrl: "", // Handled by component
-    abstract: "We present Primal, a deterministic feature mapping framework that harnesses the number-theoretic independence of prime square roots to construct robust, tunable vector representations. Diverging from standard stochastic projections (e.g., Random Fourier Features), our method exploits the Besicovitch property to create irrational frequency modulations that guarantee infinite non-repeating phase trajectories. We formalize two distinct algorithmic variants: StaticPrime, a sequence generation method that produces temporal position encodings empirically approaching the theoretical Welch bound for quasi-orthogonality; and DynamicPrime, a tunable projection layer for input-dependent feature mapping. A central novelty of the dynamic framework is its ability to unify two disparate mathematical utility classes through a single scaling parameter σ . In the low-frequency regime, the method acts as an isometric kernel map, effectively linearizing non-convex geometries to enable high-fidelity signal reconstruction. Conversely, the high-frequency regime induces chaotic phase wrapping, transforming the projection into a maximum-entropy one-way hash suitable for Hyperdimensional Computing and privacy-preserving Split Learning. Empirical evaluations demonstrate that Primal yields superior orthogonality retention and distribution tightness compared to normalized Gaussian baselines, establishing it as a computationally efficient, mathematically rigorous alternative to random matrix projections.",
-    links: {
-      code: "https://github.com/VladimerKhasia/primal",
-      paper: "https://arxiv.org/abs/2511.20839",
-      pdf: "https://arxiv.org/pdf/2511.20839"
-    },
-    tags: ["Manifold Learning", "Deterministic Feature Mapping", "Hyperdimensional Computing (HDC)"]
-  },
-  {
-    id: "andi",
-    title: "ANDI: Adaptive Norm-Distribution Interface",
-    authors: [
-      { name: "Vladimer Khasia", isMe: true },
- 
-    ],
-    venue: "Zenodo",
-    year: 2025,
     thumbnailUrl: "",
-    abstract: "The optimization of deep neural networks is currently dominated by two paradigms: coordinate- wise adaptive methods (e.g., AdamW), which ignore parameter correlations, and higher-order struc- tural methods (e.g., K-FAC, Muon), which enforce geometric constraints but suffer from super-linear computational complexity. We introduce the Adaptive Norm-Distribution Interface (ANDI), a first-order optimizer that bridges this gap via structured preconditioning. ANDI applies an element- wise equilibration transformation derived from the additive equilibration of row and column norms, effectively approximating matrix balancing without iterative solvers or singular value decomposi- tion. We prove that ANDI strictly maintains descent directions and provides an implicit trust region bounded by the gradient energy. Empirically, ANDI matches the convergence of spectral methods on ResNet-9 (CIFAR-10) while maintaining the O(N ) computational profile of AdamW. Furthermore, on Transformer-based causal language modeling (NanoGPT), ANDI outperforms both diagonal and spectral baselines, suggesting that additive norm-equilibration serves as a superior in- ductive bias for attention-based architectures. Finally, we demonstrate scalability to the 8-billion parameter regime by fine-tuning Llama-3, where ANDI exhibits rapid convergence within the constrained optimization subspaces of Low-Rank Adaptation (LoRA). The code is available at https://github.com/VladimerKhasia/ANDI",
+    abstract: "Mixture of Experts (MoE) models scale capacity but often suffer from representation collapse and gradient instability. We propose Dynamic Subspace Composition (DSC), a framework that approximates context-dependent weights via a state-dependent, sparse expansion of a shared basis bank. Formally, DSC models the weight update as a residual trajectory within a Star- Shaped Domain, employing a Magnitude-Gated Simplex Interpolation to ensure continuity at the identity. Unlike standard Mixture-of-LoRAs, which incurs O(M rd) parameter complexity by retrieving independent rank-r matrices, DSC constructs a compositional rank-K approximation from decoupled unit-norm basis vectors. This reduces parameter complexity to O(M d) and memory traffic to O(Kd), while Frame-Theoretic regularization and spectral constraints provide rigorous worst-case bounds on the dynamic update.",
     links: {
-      code: "https://github.com/VladimerKhasia/ANDI",
-      paper: "https://doi.org/10.5281/zenodo.18087892" // Placeholder as specific ID not found, but updated venue
+      // code: "",
+      paper: "https://arxiv.org/abs/2512.23448",
+      pdf: "https://arxiv.org/pdf/2512.23448"
     },
-    tags: ["Large Language Model Optimization", "First-Order Optimizers", "Structured Preconditioning"]
-  },
+    tags: ["Dynamic Subspace Composition", "Mixture of Experts (MoE)", "Contractive Basis Expansion"]
+  },  
   {
     id: "vekuanet",
     title: "DeepVekua: Geometric-Spectral Representation Learning for Physics-Informed Fields",
@@ -88,6 +71,41 @@ export const PUBLICATIONS: Publication[] = [
       pdf: "https://arxiv.org/pdf/2512.11776"
     },
     tags: ["Implicit Neural Representations (INR)", "Scientific Machine Learning (SciML)", "Spectral Neural Networks"]
+  },
+  {
+    id: "primal",
+    title: "Primal: A Unified Deterministic Framework for Quasi-Orthogonal Hashing and Manifold Learning",
+    authors: [
+      { name: "Vladimer Khasia", isMe: true }, // Kept as first per request context, though usually Sartoretti is first
+
+    ],
+    venue: "arXiv",
+    year: 2025,
+    thumbnailUrl: "", // Handled by component
+    abstract: "We present Primal, a deterministic feature mapping framework that harnesses the number-theoretic independence of prime square roots to construct robust, tunable vector representations. Diverging from standard stochastic projections (e.g., Random Fourier Features), our method exploits the Besicovitch property to create irrational frequency modulations that guarantee infinite non-repeating phase trajectories. We formalize two distinct algorithmic variants: StaticPrime, a sequence generation method that produces temporal position encodings empirically approaching the theoretical Welch bound for quasi-orthogonality; and DynamicPrime, a tunable projection layer for input-dependent feature mapping. A central novelty of the dynamic framework is its ability to unify two disparate mathematical utility classes through a single scaling parameter σ . In the low-frequency regime, the method acts as an isometric kernel map, effectively linearizing non-convex geometries to enable high-fidelity signal reconstruction. Conversely, the high-frequency regime induces chaotic phase wrapping, transforming the projection into a maximum-entropy one-way hash suitable for Hyperdimensional Computing and privacy-preserving Split Learning. Empirical evaluations demonstrate that Primal yields superior orthogonality retention and distribution tightness compared to normalized Gaussian baselines, establishing it as a computationally efficient, mathematically rigorous alternative to random matrix projections.",
+    links: {
+      code: "https://github.com/VladimerKhasia/primal",
+      paper: "https://arxiv.org/abs/2511.20839",
+      pdf: "https://arxiv.org/pdf/2511.20839"
+    },
+    tags: ["Manifold Learning", "Deterministic Feature Mapping", "Hyperdimensional Computing (HDC)"]
+  },
+  {
+    id: "andi",
+    title: "ANDI: Adaptive Norm-Distribution Interface",
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+ 
+    ],
+    venue: "Zenodo",
+    year: 2025,
+    thumbnailUrl: "",
+    abstract: "The optimization of deep neural networks is currently dominated by two paradigms: coordinate- wise adaptive methods (e.g., AdamW), which ignore parameter correlations, and higher-order struc- tural methods (e.g., K-FAC, Muon), which enforce geometric constraints but suffer from super-linear computational complexity. We introduce the Adaptive Norm-Distribution Interface (ANDI), a first-order optimizer that bridges this gap via structured preconditioning. ANDI applies an element- wise equilibration transformation derived from the additive equilibration of row and column norms, effectively approximating matrix balancing without iterative solvers or singular value decomposi- tion. We prove that ANDI strictly maintains descent directions and provides an implicit trust region bounded by the gradient energy. Empirically, ANDI matches the convergence of spectral methods on ResNet-9 (CIFAR-10) while maintaining the O(N ) computational profile of AdamW. Furthermore, on Transformer-based causal language modeling (NanoGPT), ANDI outperforms both diagonal and spectral baselines, suggesting that additive norm-equilibration serves as a superior in- ductive bias for attention-based architectures. Finally, we demonstrate scalability to the 8-billion parameter regime by fine-tuning Llama-3, where ANDI exhibits rapid convergence within the constrained optimization subspaces of Low-Rank Adaptation (LoRA). The code is available at https://github.com/VladimerKhasia/ANDI",
+    links: {
+      code: "https://github.com/VladimerKhasia/ANDI",
+      paper: "https://doi.org/10.5281/zenodo.18087892" // Placeholder as specific ID not found, but updated venue
+    },
+    tags: ["Large Language Model Optimization", "First-Order Optimizers", "Structured Preconditioning"]
   },
   {
     id: "vekualayer",
