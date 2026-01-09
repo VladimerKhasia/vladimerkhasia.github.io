@@ -18,6 +18,24 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
+    {
+    id: "SWH",
+    title: "Spectral-Window Hybrid (SWH)", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Scaling sequence modeling to extreme contexts requires balancing computational efficiency with rep- resentational expressivity. While Transformers provide precise retrieval via the attention mechanism, their quadratic O(T2) complexity limits their application to long-horizon tasks. In this work, we propose the Spectral-Window Hybrid (SWH), an architecture that decouples sequence modeling into two parallel streams: a global branch utilizing the Convolution Theorem to model long-range decay dynamics in O(T log T ) time, and a local branch employing sliding-window attention for token interactions within a bounded context. By aggregating these representations, SWH avoids the computational bottleneck of global attention while retaining local precision. We demonstrate that SWH matches the perplexity of standard Transformers on short contexts while enabling efficient linear scaling to extended sequences.",
+    links: {
+      code: "https://github.com/VladimerKhasia/SWH",
+      paper: "https://arxiv.org/abs/2601.01313",
+      pdf: "https://arxiv.org/pdf/2601.01313"
+    },
+    tags: ["Efficient Long-Context Modeling", "Hybrid Transformer Architectures", "Linear Complexity Attention"]
+  },  
   {
     id: "DSC",
     title: "Dynamic Subspace Composition: Efficient Adaptation via Contractive Basis Expansion", 
@@ -124,7 +142,24 @@ export const PUBLICATIONS: Publication[] = [
       pdf: "https://www.arxiv.org/pdf/2512.11138"
     },
     tags: ["Implicit Neural Representations (INR)", "Physics-Informed Neural Networks (PINNs)", "Spectral Methods"]
-  }
+  },
+  {
+    id: "DSA",
+    title: "Differentiable Spectral Arithmetic: Computing the L-Invariant via Automatic Differentiation",
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+ 
+    ],
+    venue: "Zenodo",
+    year: 2025,
+    thumbnailUrl: "",
+    abstract: "We present a computational framework for determining the Greenberg-Stevens L-invariant of elliptic curves with split multiplicative reduction using p-adic Automatic Differentiation (AD). Standard methods often rely on numerical finite differences, which suffer from stability issues: in Archimedean fields, they face floating-point cancellation, while in p-adic fields, they face precision exhaustion. We demonstrate that by formalizing the al- gebra of p-adic Dual Numbers, we can treat the Frobenius operator on Monsky-Washnitzer cohomology as a differentiable program. We provide an analogous computational model in JAX to demonstrate stability, reporting an execution time of 0.089s for dimension 800 via JIT compilation, alongside a reference p-adic algebraic implementation verified for correct- ness.",
+    links: {
+      paper: "https://doi.org/10.5281/zenodo.18086866" // Placeholder as specific ID not found, but updated venue
+    },
+    tags: ["p-adic Automatic Differentiation", "Greenberg-Stevens L-invariant", "Differentiable Number Theory"]
+  },
+
 ];
 
 export const EXPERIENCES = [

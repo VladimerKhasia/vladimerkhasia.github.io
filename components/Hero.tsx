@@ -118,10 +118,10 @@ export const Hero: React.FC = () => {
        <svg ref={svgRef} className="absolute inset-0 w-full h-full cursor-pointer" />
        <div className="relative z-10 pointer-events-none text-center px-4">
            <h1 className="text-4xl md:text-6xl font-serif font-bold text-gray-900 tracking-tight mb-2">
-               I know that I know nothing
+               Intelligence is active and adaptive creativity
            </h1>
            <p className="text-gray-500 text-lg md:text-xl font-light tracking-wide uppercase">
-               Σ &middot; Socrates &middot; ∫ 
+               Σ &middot; ∅ &middot; ∫ 
            </p>
        </div>
     </div>
