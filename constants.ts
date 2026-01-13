@@ -18,24 +18,7 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
-    {
-    id: "SWH",
-    title: "Spectral-Window Hybrid (SWH)", 
-    authors: [
-      { name: "Vladimer Khasia", isMe: true },
-  
-    ],
-    venue: "arXiv",
-    year: 2026,
-    thumbnailUrl: "",
-    abstract: "Scaling sequence modeling to extreme contexts requires balancing computational efficiency with rep- resentational expressivity. While Transformers provide precise retrieval via the attention mechanism, their quadratic O(T2) complexity limits their application to long-horizon tasks. In this work, we propose the Spectral-Window Hybrid (SWH), an architecture that decouples sequence modeling into two parallel streams: a global branch utilizing the Convolution Theorem to model long-range decay dynamics in O(T log T ) time, and a local branch employing sliding-window attention for token interactions within a bounded context. By aggregating these representations, SWH avoids the computational bottleneck of global attention while retaining local precision. We demonstrate that SWH matches the perplexity of standard Transformers on short contexts while enabling efficient linear scaling to extended sequences.",
-    links: {
-      code: "https://github.com/VladimerKhasia/SWH",
-      paper: "https://arxiv.org/abs/2601.01313",
-      pdf: "https://arxiv.org/pdf/2601.01313"
-    },
-    tags: ["Efficient Long-Context Modeling", "Hybrid Transformer Architectures", "Linear Complexity Attention"]
-  },  
+
   {
     id: "DSC",
     title: "Dynamic Subspace Composition: Efficient Adaptation via Contractive Basis Expansion", 
@@ -55,40 +38,39 @@ export const PUBLICATIONS: Publication[] = [
     tags: ["Dynamic Subspace Composition", "Mixture of Experts (MoE)", "Contractive Basis Expansion"]
   },  
   {
-    id: "vekuanet",
-    title: "DeepVekua: Geometric-Spectral Representation Learning for Physics-Informed Fields",
+    id: "HASVQ",
+    title: "HAS-VQ: Hessian-Adaptive Sparse Vector Quantization for High-Fidelity LLM Compression", 
     authors: [
       { name: "Vladimer Khasia", isMe: true },
-
+  
     ],
     venue: "arXiv",
-    year: 2025,
+    year: 2026,
     thumbnailUrl: "",
-    abstract: "We present DeepVekua, a hybrid architecture that unifies geometric deep learning with spectral analysis to solve partial differential equations (PDEs) in sparse data regimes. By learning a diffeomorphic coordinate transformation that maps complex geometries to a latent harmonic space, our method outperforms state-ofthe-art implicit representations on advection-diffusion systems. Unlike standard coordinate-based networks which struggle with spectral bias, DeepVekua separates the learning of geometry from the learning of physics, solving for optimal spectral weights in closed form. We demonstrate a 100× improvement over spectral baselines. The code is available at https://github.com/VladimerKhasia/vekuanet.",
+    abstract: "Post-training quantization is essential for deploying Large Language Models (LLMs) on resourceconstrained devices. However, standard integer quantization (e.g., INT4) fundamentally degrades performance by imposing a uniform grid on the heavy-tailed distribution of weight parameters, particularly in smaller-scale models (e.g., <2B parameters). We introduce HAS-VQ (Hessian-Adaptive Sparse Vector Quantization), a compression framework that strictly decouples high-sensitivity outliers from the bulk weight distribution using second-order sensitivity analysis. HAS-VQ employs a Hessian-Masked Decoupling strategy to isolate sensitive parameters, followed by robust Vector Quantization (VQ) of the remaining dense body. Crucially, we introduce a residual sparse feedback mechanism that corrects quantization errors in the most sensitive dimensions, ensuring exact reconstruction of outliers. We evaluate HAS-VQ on SmolLM2-1.7B, demonstrating two distinct regimes of superiority: (1) Pareto Dominance over Integer Baselines: At 4.23 effective bits-per-parameter (BPP), we achieve a perplexity of 14.23, significantly outperforming the standard INT4 baseline (20.03 PPL at 4.71 BPP). (2) High-Fidelity Compression: Relative to the FP16 baseline, HAS-VQ achieves a 2.3× reduction in model size (7.03 BPP) while maintaining statistically indistinguishable perplexity (10.12 vs. 10.04), effectively offering a lossless compression alternative for bandwidth-constrained environments.",
     links: {
-      code: "https://github.com/VladimerKhasia/vekuanet",
-      paper: "https://arxiv.org/abs/2512.12402", // Placeholder Arxiv
-      pdf: "https://arxiv.org/pdf/2512.12402"
+      code: "https://github.com/VladimerKhasia/HASVQ",
+      paper: "https://arxiv.org/abs/2601.06959",
+      pdf: "https://arxiv.org/pdf/2601.06959"
     },
-    tags: ["Physics-Informed Neural Networks (PINNs)", "Geometric Deep Learning", "Spectral Neural Operators"]
-  },
+    tags: ["Near-Lossless Compression: 2.3× Size Reduction with FP16 Accuracy", "Outperforms Standard INT4 Quantization", "Hessian-Masked Decoupling & Residual Feedback"]
+  },   
   {
-    id: "vecua",
-    title: "The Adaptive Vekua Cascade: A Differentiable Spectral-Analytic Solver for Physics-Informed Representation",
+    id: "andi",
+    title: "ANDI: Adaptive Norm-Distribution Interface",
     authors: [
       { name: "Vladimer Khasia", isMe: true },
-
+ 
     ],
-    venue: "arXiv",
+    venue: "Zenodo",
     year: 2025,
     thumbnailUrl: "",
-    abstract: "Coordinate-based neural networks have emerged as a powerful tool for representing continuous physical fields, yet they face two fundamental pathologies: spectral bias, which hinders the learning of high-frequency dynamics, and the curse of dimensionality, which causes parameter explosion in discrete feature grids. We propose the Adaptive Vekua Cascade (AVC), a hybrid architecture that bridges deep learning and classical approximation theory. AVC decouples manifold learning from function approximation by using a deep network to learn a diffeomorphic warping of the physical domain, projecting complex spatiotemporal dynamics onto a latent manifold where the solution is represented by a basis of generalized analytic functions. Crucially, we replace the standard gradientdescent output layer with a differentiable linear solver, allowing the network to optimally resolve spectral coefficients in a closed form during the forward pass. We evaluate AVC on a suite of five rigorous physics benchmarks, including high-frequency Helmholtz wave propagation, sparse medical reconstruction, and unsteady 3D Navier-Stokes turbulence. Our results demonstrate that AVC achieves state-of-the-art accuracy while reducing parameter counts by orders of magnitude (e.g., 840 parameters vs. 4.2 million for 3D grids) and converging 2-3× faster than implicit neural representations. This work establishes a new paradigm for memory-efficient, spectrally accurate scientific machine learning. The code is available at https://github.com/VladimerKhasia/vecua .",
+    abstract: "The optimization of deep neural networks is currently dominated by two paradigms: coordinate- wise adaptive methods (e.g., AdamW), which ignore parameter correlations, and higher-order struc- tural methods (e.g., K-FAC, Muon), which enforce geometric constraints but suffer from super-linear computational complexity. We introduce the Adaptive Norm-Distribution Interface (ANDI), a first-order optimizer that bridges this gap via structured preconditioning. ANDI applies an element- wise equilibration transformation derived from the additive equilibration of row and column norms, effectively approximating matrix balancing without iterative solvers or singular value decomposi- tion. We prove that ANDI strictly maintains descent directions and provides an implicit trust region bounded by the gradient energy. Empirically, ANDI matches the convergence of spectral methods on ResNet-9 (CIFAR-10) while maintaining the O(N ) computational profile of AdamW. Furthermore, on Transformer-based causal language modeling (NanoGPT), ANDI outperforms both diagonal and spectral baselines, suggesting that additive norm-equilibration serves as a superior in- ductive bias for attention-based architectures. Finally, we demonstrate scalability to the 8-billion parameter regime by fine-tuning Llama-3, where ANDI exhibits rapid convergence within the constrained optimization subspaces of Low-Rank Adaptation (LoRA). The code is available at https://github.com/VladimerKhasia/ANDI",
     links: {
-      code: "https://github.com/VladimerKhasia/vecua",
-      paper: "https://arxiv.org/abs/2512.11776", // Placeholder Arxiv
-      pdf: "https://arxiv.org/pdf/2512.11776"
+      code: "https://github.com/VladimerKhasia/ANDI",
+      paper: "https://doi.org/10.5281/zenodo.18087892" // Placeholder as specific ID not found, but updated venue
     },
-    tags: ["Implicit Neural Representations (INR)", "Scientific Machine Learning (SciML)", "Spectral Neural Networks"]
+    tags: ["Large Language Model Optimization", "First-Order Optimizers", "Structured Preconditioning"]
   },
   {
     id: "primal",
@@ -109,22 +91,59 @@ export const PUBLICATIONS: Publication[] = [
     tags: ["Manifold Learning", "Deterministic Feature Mapping", "Hyperdimensional Computing (HDC)"]
   },
   {
-    id: "andi",
-    title: "ANDI: Adaptive Norm-Distribution Interface",
+    id: "vecua",
+    title: "The Adaptive Vekua Cascade: A Differentiable Spectral-Analytic Solver for Physics-Informed Representation",
     authors: [
       { name: "Vladimer Khasia", isMe: true },
- 
+
     ],
-    venue: "Zenodo",
+    venue: "arXiv",
     year: 2025,
     thumbnailUrl: "",
-    abstract: "The optimization of deep neural networks is currently dominated by two paradigms: coordinate- wise adaptive methods (e.g., AdamW), which ignore parameter correlations, and higher-order struc- tural methods (e.g., K-FAC, Muon), which enforce geometric constraints but suffer from super-linear computational complexity. We introduce the Adaptive Norm-Distribution Interface (ANDI), a first-order optimizer that bridges this gap via structured preconditioning. ANDI applies an element- wise equilibration transformation derived from the additive equilibration of row and column norms, effectively approximating matrix balancing without iterative solvers or singular value decomposi- tion. We prove that ANDI strictly maintains descent directions and provides an implicit trust region bounded by the gradient energy. Empirically, ANDI matches the convergence of spectral methods on ResNet-9 (CIFAR-10) while maintaining the O(N ) computational profile of AdamW. Furthermore, on Transformer-based causal language modeling (NanoGPT), ANDI outperforms both diagonal and spectral baselines, suggesting that additive norm-equilibration serves as a superior in- ductive bias for attention-based architectures. Finally, we demonstrate scalability to the 8-billion parameter regime by fine-tuning Llama-3, where ANDI exhibits rapid convergence within the constrained optimization subspaces of Low-Rank Adaptation (LoRA). The code is available at https://github.com/VladimerKhasia/ANDI",
+    abstract: "Coordinate-based neural networks have emerged as a powerful tool for representing continuous physical fields, yet they face two fundamental pathologies: spectral bias, which hinders the learning of high-frequency dynamics, and the curse of dimensionality, which causes parameter explosion in discrete feature grids. We propose the Adaptive Vekua Cascade (AVC), a hybrid architecture that bridges deep learning and classical approximation theory. AVC decouples manifold learning from function approximation by using a deep network to learn a diffeomorphic warping of the physical domain, projecting complex spatiotemporal dynamics onto a latent manifold where the solution is represented by a basis of generalized analytic functions. Crucially, we replace the standard gradientdescent output layer with a differentiable linear solver, allowing the network to optimally resolve spectral coefficients in a closed form during the forward pass. We evaluate AVC on a suite of five rigorous physics benchmarks, including high-frequency Helmholtz wave propagation, sparse medical reconstruction, and unsteady 3D Navier-Stokes turbulence. Our results demonstrate that AVC achieves state-of-the-art accuracy while reducing parameter counts by orders of magnitude (e.g., 840 parameters vs. 4.2 million for 3D grids) and converging 2-3× faster than implicit neural representations. This work establishes a new paradigm for memory-efficient, spectrally accurate scientific machine learning. The code is available at https://github.com/VladimerKhasia/vecua .",
     links: {
-      code: "https://github.com/VladimerKhasia/ANDI",
-      paper: "https://doi.org/10.5281/zenodo.18087892" // Placeholder as specific ID not found, but updated venue
+      code: "https://github.com/VladimerKhasia/vecua",
+      paper: "https://arxiv.org/abs/2512.11776", // Placeholder Arxiv
+      pdf: "https://arxiv.org/pdf/2512.11776"
     },
-    tags: ["Large Language Model Optimization", "First-Order Optimizers", "Structured Preconditioning"]
+    tags: ["Implicit Neural Representations (INR)", "Scientific Machine Learning (SciML)", "Spectral Neural Networks"]
   },
+  {
+    id: "vekuanet",
+    title: "DeepVekua: Geometric-Spectral Representation Learning for Physics-Informed Fields",
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+
+    ],
+    venue: "arXiv",
+    year: 2025,
+    thumbnailUrl: "",
+    abstract: "We present DeepVekua, a hybrid architecture that unifies geometric deep learning with spectral analysis to solve partial differential equations (PDEs) in sparse data regimes. By learning a diffeomorphic coordinate transformation that maps complex geometries to a latent harmonic space, our method outperforms state-ofthe-art implicit representations on advection-diffusion systems. Unlike standard coordinate-based networks which struggle with spectral bias, DeepVekua separates the learning of geometry from the learning of physics, solving for optimal spectral weights in closed form. We demonstrate a 100× improvement over spectral baselines. The code is available at https://github.com/VladimerKhasia/vekuanet.",
+    links: {
+      code: "https://github.com/VladimerKhasia/vekuanet",
+      paper: "https://arxiv.org/abs/2512.12402", // Placeholder Arxiv
+      pdf: "https://arxiv.org/pdf/2512.12402"
+    },
+    tags: ["Physics-Informed Neural Networks (PINNs)", "Geometric Deep Learning", "Spectral Neural Operators"]
+  },
+  {
+    id: "SWH",
+    title: "Spectral-Window Hybrid (SWH)", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Scaling sequence modeling to extreme contexts requires balancing computational efficiency with rep- resentational expressivity. While Transformers provide precise retrieval via the attention mechanism, their quadratic O(T2) complexity limits their application to long-horizon tasks. In this work, we propose the Spectral-Window Hybrid (SWH), an architecture that decouples sequence modeling into two parallel streams: a global branch utilizing the Convolution Theorem to model long-range decay dynamics in O(T log T ) time, and a local branch employing sliding-window attention for token interactions within a bounded context. By aggregating these representations, SWH avoids the computational bottleneck of global attention while retaining local precision. We demonstrate that SWH matches the perplexity of standard Transformers on short contexts while enabling efficient linear scaling to extended sequences.",
+    links: {
+      code: "https://github.com/VladimerKhasia/SWH",
+      paper: "https://arxiv.org/abs/2601.01313",
+      pdf: "https://arxiv.org/pdf/2601.01313"
+    },
+    tags: ["Efficient Long-Context Modeling", "Hybrid Transformer Architectures", "Linear Complexity Attention"]
+  },  
   {
     id: "vekualayer",
     title: "The Vekua Layer: Exact Physical Priors for Implicit Neural Representations via Generalized Analytic Functions", // Inferred title
