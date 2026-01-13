@@ -50,7 +50,7 @@ export const Publications: React.FC = () => {
       <div className="flex items-end justify-between mb-12">
         <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400">Selected Publications</h2>
         <span className="text-xs text-gray-400 font-mono hidden md:inline-block">
-          {/* SORTED BY DATE */}
+          SORTED BY DATE
         </span>
       </div>
 
