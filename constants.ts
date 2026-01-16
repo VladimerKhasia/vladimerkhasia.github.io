@@ -38,6 +38,24 @@ export const PUBLICATIONS: Publication[] = [
     tags: ["Dynamic Subspace Composition", "Mixture of Experts (MoE)", "Contractive Basis Expansion"]
   },  
   {
+    id: "minisp",
+    title: "Model Minification: A Taylor-Ridge Framework for Structured Compression",
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+ 
+    ],
+    venue: "ResearchGate",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "As Large Language Models (LLMs) scale, the deployment cost on commodity hardware becomes prohibitive. While unstructured pruning offers theoretical compression, it often requires specialized kernels to realize speedups. We propose a robust Structured Minification framework that physically reduces the intermediate dimensions of Transformer MLPs, ensuring compatibility with standard GEMM operations. Our methodology combines (1) a global Taylor-First-Order sensitivity analysis to identify redundant feature dimensions, and (2) a closed-form Ridge Regression reconstruction to optimally heal the output distribution of the pruned layers. We investigate the efficacy of this approach across model scales, applying it to a parameter-dense 135M model and a 1.7B model. Our results demonstrate that minification is highly effective even for smaller, dense models at high retention rates: the 135M model retains significant coherence at 90% retention (Perplexity 4.33 → 4.89). Furthermore, we observe a strong scaling law: the 1.7B model exhibits remarkable robustness, tolerating 30% structural removal with only minor degradation (Perplexity 3.16 → 4.09). This suggests that while smaller models require conservative minification (80-90% retention), larger over-parameterized models possess a highly compressible subspace recoverable via linear least-squares. Furthermore, because our framework reduces model topology without altering weight precision, it remains strictly orthogonal to quantization, enabling composite compression pipelines that leverage both structural minification and subsequent bit-width reduction. The code is available at https://github.com/VladimerKhasia/minisp",
+    links: {
+      code: "https://github.com/VladimerKhasia/minisp",
+      paper: "https://www.researchgate.net/publication/399829361_Model_Minification_A_Taylor-Ridge_Framework_for_Structured_Compression", // Placeholder as specific ID not found, but updated venue
+      pdf: "https://github.com/VladimerKhasia/minisp/blob/main/SP.pdf"
+    },
+    tags: ["LLM Compression", "Structured Pruning", "Efficient Inference"]
+  },  
+  {
     id: "HASVQ",
     title: "HAS-VQ: Hessian-Adaptive Sparse Vector Quantization for High-Fidelity LLM Compression", 
     authors: [
@@ -68,7 +86,8 @@ export const PUBLICATIONS: Publication[] = [
     abstract: "The optimization of deep neural networks is currently dominated by two paradigms: coordinate- wise adaptive methods (e.g., AdamW), which ignore parameter correlations, and higher-order struc- tural methods (e.g., K-FAC, Muon), which enforce geometric constraints but suffer from super-linear computational complexity. We introduce the Adaptive Norm-Distribution Interface (ANDI), a first-order optimizer that bridges this gap via structured preconditioning. ANDI applies an element- wise equilibration transformation derived from the additive equilibration of row and column norms, effectively approximating matrix balancing without iterative solvers or singular value decomposi- tion. We prove that ANDI strictly maintains descent directions and provides an implicit trust region bounded by the gradient energy. Empirically, ANDI matches the convergence of spectral methods on ResNet-9 (CIFAR-10) while maintaining the O(N ) computational profile of AdamW. Furthermore, on Transformer-based causal language modeling (NanoGPT), ANDI outperforms both diagonal and spectral baselines, suggesting that additive norm-equilibration serves as a superior in- ductive bias for attention-based architectures. Finally, we demonstrate scalability to the 8-billion parameter regime by fine-tuning Llama-3, where ANDI exhibits rapid convergence within the constrained optimization subspaces of Low-Rank Adaptation (LoRA). The code is available at https://github.com/VladimerKhasia/ANDI",
     links: {
       code: "https://github.com/VladimerKhasia/ANDI",
-      paper: "https://doi.org/10.5281/zenodo.18087892" // Placeholder as specific ID not found, but updated venue
+      paper: "https://doi.org/10.5281/zenodo.18087892", 
+      pdf: "https://github.com/VladimerKhasia/ANDI/blob/main/ANDI_v7.pdf"
     },
     tags: ["Large Language Model Optimization", "First-Order Optimizers", "Structured Preconditioning"]
   },
