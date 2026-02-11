@@ -18,7 +18,7 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
-   {
+  {
     id: "HDPL",
     title: "Hybrid Dual-Path Linear Transformations for Efficient Transformer Architectures", 
     authors: [
