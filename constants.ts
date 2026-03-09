@@ -19,6 +19,42 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    id: "BASIS",
+    title: "BASIS: Balanced Activation Sketching with Invariant Scalars for 'Ghost Backpropagation' ", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "The activation memory required for exact backpropagation scales linearly with network depth, context length, and feature dimensionality, forming an O(L · BN ) spatial bottleneck (where B is the sequence-batch cardinality and N is the feature dimension). This constraint historically throttles the scaling of deep neural networks. While randomized automatic differentiation attempts to mitigate this, it historically suffers from catastrophic variance. In this paper, we introduce BASIS (Balanced Activation Sketching with Invariant Scalars), an efficient backpropagation algorithm that fully decouples activation memory from the batch and sequence dimensions. BASIS propagates the exact error signal (dX) to preserve flawless gradient flow, but computes the weight updates (dW) using massively compressed rank-R tensors. To solve the foundational instability of sketched gradients, we propose two novel mechanisms: Balanced Hashing, which strictly eliminates off-diagonal collision variance, and Invariant Scalars, a principled bias-variance tradeoff that deterministically preserves the exact continuous energy norm of the spatial geometry. Theoretically, BASIS reduces activation memory to O(L · RN ) and heavily decreases the backward pass matrix-multiplication footprint. Empirically, training a GPT architecture for 50,000 steps validates our theoretical guarantees: at R = 32, BASIS achieves parity with (and marginally outperforms) exact backpropagation validation loss (6.575 vs. 6.616), acting as an implicit regularizer. Remarkably, the stabilized magnitude trajectory allows the model to converge smoothly even under extreme spatial compression (R = 1), proving the extreme robustness of the estimator.",
+    links: {
+      code: "https://github.com/VladimerKhasia/basis",
+      paper: "https://doi.org/10.5281/zenodo.18881670",
+      pdf: "https://github.com/VladimerKhasia/basis/blob/main/basis.pdf"
+    },
+    tags: ["Memory-Efficient Backpropagation", "Activation Compression for Deep Neural Networks", "Randomized Automatic Differentiation"]
+  }, 
+  {
+    id: "SKO",
+    title: "Beyond Attention: True Adaptive World Models via Spherical Kernel Operator", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "The pursuit of world model based artificial intelligence has predominantly relied on projecting high-dimensional observations into parameterized latent spaces, wherein transition dynamics are subsequently learned. However, this conventional paradigm is mathematically flawed: it merely displaces the manifold learning problem into the latent space. When the underlying data distribution shifts, the latent manifold shifts accordingly, forcing the predictive operator to implicitly re-learn the new topological structure. Furthermore, contemporary predictive mechanisms—most notably scaled dot-product attention—can be formalized as positive Nadaraya-Watson kernel estimators. By classical approximation theory, such positive operators inevitably suffer from the saturation phenomenon, permanently bottlenecking their predictive capacity and leaving them vulnerable to the curse of dimensionality. In this paper, we formulate a mathematically rigorous paradigm for world model construction by redefining the core predictive mechanism. Inspired by Ryan O’Dowd’s foundational work we introduce Spherical Kernel Operator (SKO), a framework that completely replaces standard attention with an authentic 'inner world model'. By projecting the unknown data manifold onto a unified ambient hypersphere and utilizing a localized sequence of ultraspherical (Gegenbauer) polynomials, SKO performs direct integral reconstruction of the target function. Because this localized spherical polynomial kernel is not strictly positive, it bypasses the saturation phenomenon, yielding approximation error bounds that depend strictly on the intrinsic manifold dimension q, rather than the ambient dimension. Furthermore, by formalizing its unnormalized output as an authentic measure support estimator, SKO mathematically decouples the true environmental transition dynamics from the biased observation frequency of the agent. We demonstrate that SKO learns on the manifold without explicitly learning the manifold’s eigendecomposition or atlas—mirroring the unified subjective projection spaces characteristic of biological cognition. Empirical evaluations confirm that SKO significantly accelerates convergence and outperforms standard attention baselines in autoregressive language modeling. Ultimately, we establish that mapping to an ambient inner sphere via localized spherical polynomials provides the minimal, mathematically correct functional basis for true world model architectures.",
+    links: {
+      code: "https://github.com/VladimerKhasia/SKO",
+      paper: "https://zenodo.org/records/18777502",
+      pdf: "https://github.com/VladimerKhasia/SKO/blob/main/sko.pdf"
+    },
+    tags: ["World Model Artificial Intelligence", "Spherical Kernel Operator (SKO)", "Manifold Learning in Machine Learning"]
+  }, 
+  {
     id: "HDPL",
     title: "Hybrid Dual-Path Linear Transformations for Efficient Transformer Architectures", 
     authors: [
