@@ -19,6 +19,24 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    id: "holobyte",
+    title: "HoloByte: Continuous Hyperspherical Distillation for Tokenizer-Free Modeling", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Autoregressive sequence modeling universally relies on discrete subword tokenization to circumvent the $\mathcal{O}(N^2)$ computational intractability of native byte-level attention. However, this heuristic quantization imposes artificial morphological boundaries, enforces vocabulary dependence, and fractures the continuity of the optimization landscape. To resolve this dichotomy, we introduce \textbf{HoloByte}: a strictly tokenizer-free framework utilizing Continuous Hyperspherical Distillation. HoloByte partitions discrete byte sequences into fixed-capacity chunks and projects them into a continuous, strictly bounded hyperspherical manifold via an invertible, dimension-preserving orthogonal rotation operator. This spatial superposition allows a macroscopic transformer to operate exclusively on compressed continuous representations, formally reducing the exact attention time complexity from $\mathcal{O}(N^2D)$ to $\mathcal{O}\left( \frac{N^2}{W^2}D + ND^2 \right)$. A localized causal micro-decoder subsequently unbinds these representations to compute exact byte-level distributions. To govern this continuous trajectory, we propose a dual-objective formulation incorporating a mathematically precise Holographic Latent Mean Squared Error, which strictly bounds the gradient and guarantees asymptotic stability. Theoretically, we derive the minimal embedding dimension $D = \Omega(W \ln |\mathcal{V}|)$ required to ensure error-free discrete recovery from the continuous manifold. Empirically, under strictly matched parameter constraints ($\mathcal{O}(P) \approx 82 \times 10^6$), HoloByte is systematically outperforming a comparable discrete Byte-Pair Encoding (BPE) baseline. These results establish Continuous Hyperspherical Distillation as a mathematically rigorous and computationally tractable foundation for vocabulary-invariant sequence modeling.",
+    links: {
+      code: "https://github.com/VladimerKhasia/HoloByte",
+      paper: "https://zenodo.org/records/18944401",
+      pdf: "https://github.com/VladimerKhasia/HoloByte/blob/main/holobyte.pdf"
+    },
+    tags: ["Tokenizer-Free Language Models", "Continuous Hyperspherical Distillation", "Byte-Level Sequence Modeling"]
+  }, 
+  {
     id: "BASIS",
     title: "BASIS: Balanced Activation Sketching with Invariant Scalars for 'Ghost Backpropagation' ", 
     authors: [
