@@ -9,7 +9,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const PROFILE: Profile = {
   name: "Vladimer Khasia",
   title: "Machine Learning Researcher",
-  institution: "Cohere Labs Community", 
+  institution: "Bionic Labs", 
   email: "vladimer.khasia.1@gmail.com",
   github: "https://github.com/VladimerKhasia",
   scholar: "https://scholar.google.com/citations?user=noTRcQoAAAAJ&hl=en",
@@ -18,6 +18,24 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
+  {
+    id: "HoloWave",
+    title: "HoloWave: A Continuous Spherical Neural Operator for The Efficient Mesh-Free Meteorological Nowcasting", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Observational meteorological nowcasting depends fundamentally on highly sparse, non-uniform satellite swath measurements. Standard assimilation frameworks necessitate the intermediate interpo- lation of these point clouds onto discrete latitude-longitude grids, a mapping that inherently induces spatial quantization errors and topological singularities at the poles. While spatial message-passing algorithms (Graph Neural Networks) resolve the necessity for regular gridding, they strictly enforce an O(N^2) pairwise distance-computation bottleneck, rendering large-scale continuous assimilation mathematically intractable. We propose the Deep HoloWave Network, a continuous spherical neural operator that completely bypasses discrete topological structures. By parameterizing a continuous spectral embedding bounded by the Jacobi-Anger expansion, the architecture projects non-uniform spherical coordinates onto an orthogonal holographic basis in strict O(N ) time. Global atmospheric dispersion is subsequently evolved via an exact analytic solver for the fractional damped wave equation. Empirical evaluations on non-uniform ERA5 thermodynamic observation swaths demon- strate that HoloWave completely circumvents the memory collapse characteristic to pairwise spatial models—scaling seamlessly to 32, 768 continuous nodes in real-time—while simultaneously yielding a 25.9% reduction in root-mean-square error for global 2-meter temperature forecasting.",
+    links: {
+      code: "https://github.com/VladimerKhasia/HoloWave",
+      paper: "https://zenodo.org/records/19051781",
+      pdf: "https://github.com/VladimerKhasia/HoloWave/blob/main/holowave.pdf"
+    },
+    tags: ["Spherical Neural Operators for Weather Nowcasting", "Continuous Neural Operators on the Sphere", "Satellite Swath Data Assimilation"]
+  },   
   {
     id: "holobyte",
     title: "HoloByte: Continuous Hyperspherical Distillation for Tokenizer-Free Modeling", 
