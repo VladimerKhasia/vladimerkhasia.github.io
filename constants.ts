@@ -19,6 +19,24 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    id: "BooleanClass",
+    title: "Backpropagation-Free Continual Learning in Boolean Space for Extreme Edge Intelligence", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "The deployment of adaptive machine learning on extreme edge hardware is fundamentally bottlenecked by the computational and spatial complexities of gradient-based optimization and floating-point arithmetic. To circumvent these limitations, we present a backpropagation-free continual learning framework natively engineered for high-dimensional Boolean space ($\mathcal{H}$-space). By projecting continuous, low-dimensional data into a pseudo-orthogonal $8192$-bit geometric space, the proposed methodology replaces energy-intensive matrix multiplications with hardware-native bitwise operations (exclusive-OR and population counts) acting strictly over bit-packed memory registers. Learning is achieved geometrically via bipolar associative memory and dynamic superposition, which inherently bypasses iterative error-correction for novel data. Empirical evaluation demonstrates that the framework achieves competitive predictive performance on high-dimensional sensor streams while exhibiting microsecond-scale adaptation. Notably, the system assimilates a completely novel class via 5-shot continual learning in $0.96$ milliseconds, strictly preventing catastrophic forgetting. Bounded by an exact $\mathcal{O}(C \cdot D/W)$ space and time complexity, this entirely integer- and bit-based architecture provides a highly scalable, energy-efficient foundation for direct field-programmable gate array (FPGA) integration, embedded microcontrollers, and real-time streaming classification across domains ranging from IoT sensor networks to biological motif recognition.",
+    links: {
+      code: "https://github.com/VladimerKhasia/booleanclass",
+      paper: "https://zenodo.org/records/19170384",
+      pdf: "https://github.com/VladimerKhasia/booleanclass/blob/main/booleanclass.pdf"
+    },
+    tags: ["Hyperdimensional Computing", "Continual Learning", "Edge AI", "Hardware-Native Machine Learning", "Backpropagation-Free", "Boolean Space"]
+  },   
+  {
     id: "HoloWave",
     title: "HoloWave: A Continuous Spherical Neural Operator for The Efficient Mesh-Free Meteorological Nowcasting", 
     authors: [
