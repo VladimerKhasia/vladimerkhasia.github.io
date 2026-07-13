@@ -18,6 +18,24 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
+   {
+    id: "eae",
+    title: "Explicit Adjoint Exposure and Decoupled Auto-Differentiation", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Standard reverse-mode automatic differentiation (AD) relies on a monolithic, global computational graph that records the entire network execution. This design requires maintaining a continuous activation tape, resulting in a multiplicative O(N D_inner L) spatial complexity while keeping intermediate gradients (adjoint states) inaccessible within the compiler backend. We propose Explicit Adjoint Exposure (EAE), a training framework grounded in the discrete-time Adjoint State Method that bypasses the global monolithic AD tape completely. By reformulating layer-wise forward and backward sweeps as local Hamiltonian systems, EAE decouples the global computational graph, replacing it with a sequence of isolated, block-local AD sweeps that materialize the adjoint states (costates) in user manipulable way at block boundaries. This explicit exposure unlocks structural optimization opportunities inaccessible to standard backpropagation, including localized adjoint quantization and sparsification, dynamic intermediate gradient regularization, and synthetic costate modeling. Furthermore, by pairing this decoupled structure with aggressive local garbage collection (EAE-GC), we convert the backward spatial complexity to an additive O(N D L) + O(N D_inner) footprint, establishing a strict O(1) active tape memory scaling with respect to network depth. Empirical evaluations on an autoregressive transformer verify that EAE-GC preserves analytical gradient equivalence and equivalent convergence dynamics within floating-point precision limits while strictly reducing VRAM requirements.",
+    links: {
+      code: "https://github.com/VladimerKhasia/eae",
+      paper: "https://zenodo.org/records/21338281",
+      pdf: "https://github.com/VladimerKhasia/eae/blob/main/nonsequential.pdf"
+    },
+    tags: ["Backprop free", "Memory-Efficient Neural Network Training", "Adjoint State Method",]
+  },  
   {
     id: "BooleanClass",
     title: "Backpropagation-Free Continual Learning in Boolean Space for Extreme Edge Intelligence", 
