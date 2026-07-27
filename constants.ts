@@ -18,7 +18,25 @@ export const PROFILE: Profile = {
 };
 
 export const PUBLICATIONS: Publication[] = [
-   {
+  {
+    id: "meeb",
+    title: "Memory-Efficient Exact Backpropagation", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Training deep neural networks is constrained by the memory footprint of the computational graph during automatic differentiation. This memory requirement scales linearly with model depth and sequence length, while the final projections contribute significantly to the spatial lower bound. Existing optimization techniques, such as activation checkpointing, fail to circumvent the memory bottlenecks caused by global graph construction and high-dimensional logits. We introduce a backpropagation algorithm that computes exact gradients without maintaining a global computational graph. Our approach limits peak memory usage to just a single model layer at a time. It achieves this by saving only the boundaries between layers during the forward pass, calculating the final loss in smaller chunks, and recomputing the math for each layer one by one during the backward pass. This formulation analytically reduces overall spatial complexity from O(LBT (HT + D inter) + BT V) to O(LBT D + BT (HT + D inter) + T V). Empirical evaluation on a 60-million parameter Transformer trained on the Ultra-FineWeb dataset demonstrates a 62.9% reduction in peak memory (from 6.45 GB to 2.39 GB), identical loss trajectories and a negligible 0.9% reduction in training throughput. These findings indicate that method is maximizing hardware utilization without compromising optimization exactness. The code is available at https://github.com/VladimerKhasia/localprop",
+    links: {
+      code: "https://github.com/VladimerKhasia/localprop",
+      paper: "https://zenodo.org/records/21537962",
+      pdf: "https://github.com/VladimerKhasia/localprop/blob/main/paper.pdf"
+    },
+    tags: ["Beyond Backprop", "Memory-Efficient Neural Network Training", "Single Layer Cost of VRAM",]
+  },    
+  {
     id: "eae",
     title: "Explicit Adjoint Exposure and Decoupled Auto-Differentiation", 
     authors: [
