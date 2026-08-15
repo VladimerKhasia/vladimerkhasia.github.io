@@ -19,6 +19,24 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    id: "sgn",
+    title: "p-Spin Glass Network Efficient Single-Batch Continual Learning", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Modern sequence models heavily rely on mas- sive memory footprints and large-batch stochas- tic optimization, barriers that restrict sample ef- ficiency and continual learning. We introduce the p-Spin Glass Network, a novel architecture that overcomes these limitations, structurally man- ages optimization variance and yields four no- ticeable capabilities: 1. It enforces memory ef- ficiency: native ternary quantization compresses internal parameters by 8×, while exact implicit gradients strictly bound activation memory to O(B · T · D). 2. it demonstrates sample effi- ciency, matching the asymptotic performance of a Transformer baseline while utilizing 8× fewer training sequences. 3. Method enables single- batch stability and smooth, monotonic conver- gence at a stochastic micro-batch size of 1. 4. Finally, this stability proves modality-agnostic, maintaining robust temporal credit assignment across both discrete subword and long horizon uncompressed raw byte streams. Ultimately, this work removes large batch requirement for stable deep learning, establishing a foundation for con- tinuous learning and edge AI.",
+    links: {
+      code: "https://github.com/VladimerKhasia/sgn",
+      paper: "https://zenodo.org/records/21937167",
+      pdf: "https://github.com/VladimerKhasia/sgn/blob/main/sgn.pdf"
+    },
+    tags: ["p-Spin Glass Network", "Continual Learning", "Model Efficiency", "Sample Efficiency",]
+  },    
+  {
     id: "meeb",
     title: "Memory-Efficient Exact Backpropagation", 
     authors: [
