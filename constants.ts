@@ -19,6 +19,24 @@ export const PROFILE: Profile = {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    id: "ldrl",
+    title: "Lossless, Unsupervised, and Reversible Discrete Representation Learning", 
+    authors: [
+      { name: "Vladimer Khasia", isMe: true },
+  
+    ],
+    venue: "arXiv",
+    year: 2026,
+    thumbnailUrl: "",
+    abstract: "Unsupervised representation learning methods that rely on continuous optimization produce lossy approximations. This hinders their application to discrete domains, such as cryptographic protocols, which require exact structural recovery and a strictly zero Bit Error Rate. Existing discrete methods either fail to capture nonlinear dependencies or rely on continuous relaxations that destroy exact bijectivity. To address these limitations, we introduce a lossless representation learning framework operating natively on the Boolean domain. Our methodology and achievements as follows: (1) We formulate Boolean disentanglement as a combinatorial optimization problem over reversible logic circuits, proving that minimizing Total Correlation is mathematically isomorphic to minimizing the sum of marginal entropies under strict bijective constraints. (2) We design discrete search algorithms featuring a Minimum Description Length penalty to prevent overfitting, alongside a lexicographical objective that traverses vanishing gradient plateaus by sequentially isolating deterministic coordinates. (3) We demonstrate that our approach exactly recovers the latent entropy spectrum of planted nonlinear manifolds. (4) We show that our framework successfully cryptanalyzes encrypted ASCII Substitution Permutation Networks, maintaining strict reversibility and compressing the latent representation below the baseline plaintext entropy without continuous neural relaxation.",
+    links: {
+      code: "https://github.com/VladimerKhasia/ldrl",
+      paper: "https://doi.org/10.5281/zenodo.22714861",
+      pdf: "https://github.com/VladimerKhasia/ldrl/blob/main/paper.pdf"
+    },
+    tags: ["Lossless reversible logic circuits", "Unsupervised Discrete Representation Learning", "Reversible Discrete Representation Learning",]
+  },
+  {
     id: "sgn",
     title: "p-Spin Glass Network Efficient Single-Batch Continual Learning", 
     authors: [
